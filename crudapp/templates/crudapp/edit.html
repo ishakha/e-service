@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <form action="{% url 'showdata' %}" method="post">
+        {% csrf_token %}
+    <table>
+        {% if key %}
+            {% for u in key %}
+            <tr>
+                <td>{{u.id}}</td>
+                <td>{{u.Username}}</td>
+                <td>{{u.Email}}</td>
+                <td>{{u.Password}}</td>
+            </tr>
+    </table>
+    <table>
+        <tr>
+            <td><input type="hidden" name="id" value="{{u.id}}"></td>
+        </tr>
+        <tr>
+            <td>UserName</td>
+            <td><input type="text" name="Username"></td>
+        </tr>
+        <tr>
+                <td>email</td>
+                <td><input type="text" name="Email"></td>
+        </tr>
+        <tr>
+                <td>password</td>
+                <td><input type="password" name="Password"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="save"></td>
+        </tr>
+    </table>
+    {% endfor %}
+    {% endif %}
+</form>
+</body>
+</html>

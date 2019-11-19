@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td style="color:aqua">
+                    UserName
+                </td>
+                <td><input type="text" name="Username">
+                </td>
+
+            </tr>
+            <tr>
+                <td style="color:blueviolet">
+                    email
+                    
+                </td>
+                <td><input type="text" name="Email">
+                </td>
+            </tr>
+            <tr>
+                <td style="color: coral">
+                    password 
+                </td>
+                <td><input type="password" name="Password">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

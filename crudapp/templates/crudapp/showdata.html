@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <form action="{% url 'edit' %}" method="post">
+        {% csrf_token %}
+    <table style="border: 1px soild">
+        <th>id</th>
+        <th>username</th>
+        <th>email</th>
+        <th>password</th>
+        {% if key1 %}
+        {% for u in key1 %}
+
+        <tr>
+            <td>{{u.id}}</td>
+            <td>{{u.Username}}</td>
+            <td>{{u.Email}}</td>
+            <td>{{u.Password}}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        <td><input type="number" name="u"></td>
+        <td><input type="submit" value="Edit"></td>
+
+        
+
+        </tr>
+    </table>
+</body>
+</html>
